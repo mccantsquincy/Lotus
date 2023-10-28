@@ -6,7 +6,7 @@ import { v } from "convex/values";
   an object containing one table "documents". 
   defineTable is used to define the properties of a table.
   We are also adding two indexes to the table for userId column and 
-  efficient quering based on userId and a combination of parent document. 
+  for efficient quering based on userId and a combination of parent document. 
   Indexes help in optimizing queries
 */
 

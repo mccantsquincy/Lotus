@@ -103,7 +103,8 @@ export const Navigation = () => {
         setTimeout(() => setIsResetting(false), 300);
     }
   }; 
-
+  
+  // Handle create calls create function api in the document.ts file, Then a toast notification will render.
   const handleCreate = () => {
     const promise = create({
       title: "Untitled",
