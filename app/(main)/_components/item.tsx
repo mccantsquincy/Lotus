@@ -1,5 +1,6 @@
 "use client";
 
+import { Skeleton } from "@/components/ui/skeleton";
 import { Id } from "@/convex/_generated/dataModel";
 import { cn } from "@/lib/utils";
 import { ChevronDown, ChevronRight, LucideIcon } from "lucide-react";
@@ -16,7 +17,7 @@ interface ItemProps {
   onClick: () => void;
   icon: LucideIcon;
 }
-const Item = ({ 
+export const Item = ({ 
   id,
   label, 
   onClick, // onClick will call handleCreate function from navigation.tsx file
@@ -70,5 +71,17 @@ const Item = ({
     </div>
   ); 
 };
+
+Item.Skeleton = function ItemSkeleton({ level } : { level?: number }) {
+  return (
+    <div
+      style={{
+        paddingLeft: level ? `${(level * 12) + 25}px` : "12px"
+      }}
+    >
+      <Skeleton />
+    </div>
+  )
+}
 
 export default Item;
