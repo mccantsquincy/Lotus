@@ -4,7 +4,7 @@ import { mutation, query } from "./_generated/server";
 import { Doc, Id } from "./_generated/dataModel";
 
 /*
-  The code defines a mutation operation called archive that is 
+  The function defines a mutation operation called archive that is 
   used to archive a document and its child documents. 
   It first checks if the user is authenticated, retrieves the user's ID, 
   and verifies that the document exists and belongs to the authenticated user. 
