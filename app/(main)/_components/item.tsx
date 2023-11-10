@@ -26,7 +26,7 @@ interface ItemProps {
   level?: number;
   label: string;
   onExpand?: () => void;
-  onClick: () => void;
+  onClick?: () => void;
   icon: LucideIcon;
 }
 export const Item = ({
