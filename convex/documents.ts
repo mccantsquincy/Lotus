@@ -207,11 +207,11 @@ export const create = mutation({
             }
         }
 
-        await ctx.db.patch(args.id, options);
+        const document = await ctx.db.patch(args.id, options);
 
         recursiveRestore(args.id);
 
-        return existingDocuments;
+        return document;
 
     }
  })
@@ -226,6 +226,20 @@ export const create = mutation({
         }
 
         const userId = identity.subject;
+
+        const existingDocument = await ctx.db.get(args.id);
+
+        if(!existingDocument) {
+            throw new Error("Not found");
+        }
+
+        if(existingDocument.userId !== userId) {
+            throw new Error("Unauthorized");
+        }
+
+        const document = await ctx.db.delete(args.id);
+
+        return document;
     }
  })
 
